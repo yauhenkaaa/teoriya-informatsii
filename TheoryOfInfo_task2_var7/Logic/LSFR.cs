@@ -7,7 +7,7 @@ namespace TheoryOfInfo_task2_var7.Logic
     public static class LSFR
     {
         private const int RegisterLength = 29;
-        private const int BitsToProcess = 30; // обрабатываются только первые и последние 30 бит для больших файлов
+        private const int BitsToProcess = 240; // обрабатываются только первые и последние 15 байт для больших файлов
 
         // Поле для хранения сгенерированного потока ключа, который можно потом вывести в интерфейсе
         public static BitArray KeyStream { get; private set; }
@@ -43,7 +43,7 @@ namespace TheoryOfInfo_task2_var7.Logic
             {
                 bool keyBit = register[0];
                 keyStream[i] = keyBit;
-                // Новый бит вычисляется как XOR первого бита и бита с индексом 27
+                // Новый бит вычисляется как XOR первого бита и бита с индексом 29
                 bool newBit = register[0] ^ register[27];
                 for (int j = 0; j < RegisterLength - 1; j++)
                     register[j] = register[j + 1];
@@ -66,7 +66,7 @@ namespace TheoryOfInfo_task2_var7.Logic
             byte[] fileBytes = File.ReadAllBytes(inputFilePath);
             BitArray fileBits = new BitArray(fileBytes);
             int totalBits = fileBits.Length;
-            bool partialProcessing = totalBits > (2 * BitsToProcess);
+            bool partialProcessing = totalBits > 8192;
 
             // Инициализация LSFR-регистра из строки registerState
             bool[] register = new bool[RegisterLength];
@@ -90,8 +90,8 @@ namespace TheoryOfInfo_task2_var7.Logic
                     fileBits[i] = fileBits[i] ^ keyBit;
                 }
 
-                // Обновление LSFR-регистра: новый бит = XOR первого и бита с индексом 27
-                bool newBit = register[0] ^ register[27];
+                // Обновление LSFR-регистра: новый бит = XOR второго и бита с индексом 29
+                bool newBit = register[1] ^ register[28];
                 for (int j = 0; j < RegisterLength - 1; j++)
                 {
                     register[j] = register[j + 1];

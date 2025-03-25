@@ -68,9 +68,9 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        <Label Content="Открытый текст:" HorizontalAlignment="Left" Margin="321,-1,0,0" VerticalAlignment="Top" Width="147" FontFamily="Arial" FontSize="16px" Grid.ColumnSpan="2"/>
+        <Label Content="Исходный текст:" HorizontalAlignment="Left" Margin="321,-1,0,0" VerticalAlignment="Top" Width="147" FontFamily="Arial" FontSize="16px" Grid.ColumnSpan="2"/>
         <Label Content="Ключ:" HorizontalAlignment="Left" Margin="162,-1,0,0" VerticalAlignment="Top" Width="148" FontFamily="Arial" FontSize="16px" Grid.Column="2"/>
-        <Label Content="Шифротекст:" HorizontalAlignment="Left" Margin="321,443,0,0" VerticalAlignment="Top" Width="148" FontFamily="Arial" FontSize="16px" Grid.ColumnSpan="2"/>
+        <Label Content="Итоговый текст:" HorizontalAlignment="Left" Margin="321,443,0,0" VerticalAlignment="Top" Width="148" FontFamily="Arial" FontSize="16px" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheoryOfInfo_task2_var7")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e90107fe73248a4960a47e242510c478b0e2acb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd7fe4229ccdcc63c2f4e96e70b9b0f87070f410")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheoryOfInfo_task2_var7")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheoryOfInfo_task2_var7")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

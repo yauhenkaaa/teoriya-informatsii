@@ -5,12 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheoryOfInfo_task2_var7"
         mc:Ignorable="d"
-        Title="Лабораторная работа №2, вариант №7, Емельяненко Евгений, гр. 351002" Height="450" Width="800">
+        Title="Лабораторная работа №2, вариант №7, Емельяненко Евгений, гр. 351002" Height="800" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="767*"/>
+            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="125*"/>
         </Grid.ColumnDefinitions>
+        <RichTextBox Name="rtbKeyText" IsReadOnly="True" Background="#FFE5E4FF" Margin="155,25,20,341" Grid.Column="2" Width="410" FontFamily="Arial" FontSize="16">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox Name="rtbOpenText" IsReadOnly="True" Background="#FFE5E4FF" Margin="321,25,469,341" Grid.ColumnSpan="3" FontFamily="Arial" FontSize="16">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox Name="rtbCipherText" IsReadOnly="True" Background="#FFE5E4FF" Margin="321,465,28,21" Grid.ColumnSpan="3" FontFamily="Arial" FontSize="16">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <StackPanel Margin="0,0,166,0" Background="#FFCDCCFF">
+            <Separator Height="35" Background="#FFFCF3F3"/>
+            <Label Content="Начальное состояние (29 бит):" FontFamily="Arial" FontSize="16"/>
+            <TextBox Name="tbxRegister" TextChanged="tbxRegister_TextChanged" TextWrapping="Wrap" Text="" Width="260" Height="31" FontFamily="Arial" FontSize="16"/>
+            <Separator Height="35" Background="#FFFCF3F3"/>
+            <Label Content="Длина регистра:" FontFamily="Arial" FontSize="16"/>
+            <TextBox Name="tbxLength" IsReadOnly="True" TextWrapping="Wrap" Text="" Width="260" Height="31" FontFamily="Arial" FontSize="16"/>
+            <Separator Height="135" Background="#FFFCF3F3"/>
+            <Button Name="btnOpenFile" Content="Открыть файл" Click="OpenFileButton_Click" Height="36" FontFamily="Arial" FontSize="16" Width="260"/>
+            <Separator Background="{x:Null}" Height="35"/>
+            <StackPanel Orientation="Horizontal">
+                <Separator Background="{x:Null}" Width="10"/>
+                <Button Name="btnEncrypt" Content="Зашифровать" Click="EncryptButton_Click" RenderTransformOrigin="0.5,0.5" Width="120" Height="36" FontFamily="Arial" FontSize="16">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="0.275"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.195"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Separator Background="{x:Null}" Width="20"/>
+                <Button Name="btnDecrypt" Content="Дешифровать" Click="DecryptButton_Click" RenderTransformOrigin="0.5,0.5" Width="120" Height="36" FontFamily="Arial" FontSize="16">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="0.275" AngleX="0.939"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.196" X="0.188"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Label Content="Открытый текст:" HorizontalAlignment="Left" Margin="321,-1,0,0" VerticalAlignment="Top" Width="147" FontFamily="Arial" FontSize="16px" Grid.ColumnSpan="2"/>
+        <Label Content="Ключ:" HorizontalAlignment="Left" Margin="162,-1,0,0" VerticalAlignment="Top" Width="148" FontFamily="Arial" FontSize="16px" Grid.Column="2"/>
+        <Label Content="Шифротекст:" HorizontalAlignment="Left" Margin="321,443,0,0" VerticalAlignment="Top" Width="148" FontFamily="Arial" FontSize="16px" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

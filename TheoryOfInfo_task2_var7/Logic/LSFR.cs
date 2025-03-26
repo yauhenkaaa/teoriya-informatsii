@@ -7,7 +7,7 @@ namespace TheoryOfInfo_task2_var7.Logic
     public static class LSFR
     {
         private const int RegisterLength = 29;
-        private const int BitsToProcess = 240; // обрабатываются только первые и последние 15 байт для больших файлов
+        private const int BitsToProcess = 15*8;
 
         // Поле для хранения сгенерированного потока ключа, который можно потом вывести в интерфейсе
         public static BitArray KeyStream { get; private set; }
@@ -43,7 +43,7 @@ namespace TheoryOfInfo_task2_var7.Logic
             {
                 bool keyBit = register[0];
                 keyStream[i] = keyBit;
-                // Новый бит вычисляется как XOR первого бита и бита с индексом 29
+                // Новый бит вычисляется как XOR второго бита и бита с индексом 29
                 bool newBit = register[0] ^ register[27];
                 for (int j = 0; j < RegisterLength - 1; j++)
                     register[j] = register[j + 1];
@@ -91,7 +91,7 @@ namespace TheoryOfInfo_task2_var7.Logic
                 }
 
                 // Обновление LSFR-регистра: новый бит = XOR второго и бита с индексом 29
-                bool newBit = register[1] ^ register[28];
+                bool newBit = register[0] ^ register[27];
                 for (int j = 0; j < RegisterLength - 1; j++)
                 {
                     register[j] = register[j + 1];
